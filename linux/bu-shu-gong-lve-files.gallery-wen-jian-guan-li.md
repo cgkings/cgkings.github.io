@@ -39,11 +39,11 @@ sudo systemctl enable caddy
 step3:首次执行Index.php,生成`_files`文件夹，用于存储缓存、配置和可选的包含文件。
 
 ```
-php /home/mydisk/index.php
+cd /home/mydisk && php index.php
 ```
 
 ```
-sudo chown caddy:caddy -R /home/mydisk && sudo chmod 777 -R /home/mydisk
+sudo chown caddy:caddy -R /home/mydisk && sudo chmod 755 -R /home/mydisk
 ```
 
 step4:caddy2发布index.php
@@ -75,9 +75,29 @@ sudo systemctl restart php7.4-fpm.service && sudo systemctl restart caddy
 
 ![](<../.gitbook/assets/image (75).png>)
 
+最后
 
+修改PHP上传限制，upload 128M,post 1024M,max time 600,memory\_limit 256M
 
+```
+max_execution_time
+```
 
+```
+max_input_time
+```
+
+```
+memory_limit
+```
+
+```
+post_max_size
+```
+
+```
+upload_max_filesize
+```
 
 
 

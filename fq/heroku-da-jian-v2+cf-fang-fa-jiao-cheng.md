@@ -18,7 +18,7 @@ Heroku 是一个支持多种编程语言的云平台即服务，并且提供免�
 
 ### 二、配置CloudFlare反向代理 <a href="#er-pei-zhi-cloudflare-fan-xiang-dai-li" id="er-pei-zhi-cloudflare-fan-xiang-dai-li"></a>
 
-1、首先登陆CloudFlare官网，然后点击 右侧的 Workers，点击创建 Workers ![](<../.gitbook/assets/image (10).png>)&#x20;
+1、首先登陆CloudFlare官网，然后点击 右侧的 Workers，点击创建 Workers <img src="../.gitbook/assets/image (10).png" alt="" data-size="original">&#x20;
 
 2、接着复制下方代码，并添加进去！注意把下面的中文替换成你之前在Domains项看见的那个域名前缀：
 

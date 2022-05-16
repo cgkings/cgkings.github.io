@@ -90,7 +90,7 @@ CN=true ./nezha.sh
 
 ![](<../.gitbook/assets/image (65).png>)
 
-![](<../.gitbook/assets/image (46).png>)
+![](<../.gitbook/assets/image (46) (1).png>)
 
 ### 2 客户端安装脚本
 

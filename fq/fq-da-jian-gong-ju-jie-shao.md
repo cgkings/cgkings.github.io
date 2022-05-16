@@ -86,21 +86,26 @@ chmod +x /root/x_ui_proc.sh
 (crontab -l ; echo "*/1 * * * * bash /root/x_ui_proc.sh > /dev/null") | crontab - && crontab -l && /etc/init.d/cron restart
 ```
 
-## 四、其他注意事项
+## 四、caddy反代面板及tls证书设置
 
-1.服务器如果配置有防火墙，请记得放行相关的端口\
-2.证书申请完毕后，打开x-ui后台-面板设置\
-“面板证书公钥文件路径”里填写/root/.ssh/cert.crt\
-“面板证书密钥文件路径”里填写/root/.ssh/private.key\
-重启面板即可\
-3.讨论群：[https://t.me/openwrt\_lede\_v2ray\_plugin](https://t.me/openwrt\_lede\_v2ray\_plugin)\
-4.文中证书申请一节部分参考波仔博客，特别感谢！\
-5.特别鸣谢sprov065大佬的辛苦付出！
+1、caddy反代面板
 
-\
+```
+a.changfeng.buzz: {
+    reverse_proxy 127.0.0.1 54321}
+```
 
+2、caddy证书所在路径：
 
+/var/lib/caddy/.local/share/caddy/certificates/acme-v02.api.letsencrypt.org-directory
 
+`例如：`
 
+/var/lib/caddy/.local/share/caddy/certificates/acme-v02.api.letsencrypt.org-directory/域名/域名.crt
 
+/var/lib/caddy/.local/share/caddy/certificates/acme-v02.api.letsencrypt.org-directory//域名/域名.key
+
+3、填写证书和密钥路径：
+
+![](<../.gitbook/assets/image (46).png>)
 
