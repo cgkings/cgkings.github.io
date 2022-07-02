@@ -23,79 +23,23 @@ PS：若是为了你的服务器安全，建议使用CDN！
 
 * PVE（Esxi）下创建的虚拟机VPS
 
-## 二、SubConverter后台搭建
+## 二、SubConverter后端搭建
 
-#### 下载并解压后端程序
-
-```
-cd /home && wget https://github.com/tindy2013/subconverter/releases/download/v0.7.1/subconverter_linux64.tar.gz && tar -zxvf subconverter_linux64.tar.gz
-```
-
-完成以后，在 `/home` 文件夹下会多出一个 `subconverter` 的文件夹，这个就是我们的后端程序
-
-#### 修改配置文件参数
-
-现在我们需要修改后端配置文件中的一些参数
-
-找到VPS文件 `/home/subconverter/pref.ini` ，找到如下参数进行修改
+1、docker部署
 
 ```
-api_access_token=123123dfsdsdfsdfsdf            #随意设置自己知道就行
-managed_config_prefix=https://suc.cgking.com  #设置成我们刚刚解析的后端域名
-listen=127.0.0.1                                #这里改成 127.0.0.1 进行反代
+docker run -d --restart=always -p 25500:25500 tindy2013/subconverter:latest
 ```
 
-#### 创建服务进程并启动
-
-接下来我们需要创建一个服务，让VPS每次重启或是开机自动运行后端程序
-
-找到VPS目录 `/etc/systemd/system`，创建一个名为 `sub.service` 的文件
-
-打开文件，贴入以下内容，保存。
+2、验证成功
 
 ```
-[Unit]
-Description=A API For Subscription Convert
-After=network.target
- 
-[Service]
-Type=simple
-ExecStart=/home/subconverter/subconverter
-WorkingDirectory=/home/subconverter
-Restart=always
-RestartSec=10
- 
-[Install]
-WantedBy=multi-user.target
+curl http://localhost:25500/version
 ```
-
-检查运行状态以及设置开机自启
-
-```
-systemctl daemon-reload && systemctl start sub && systemctl enable sub && systemctl status sub
-```
-
-配置caddy2反代
-
-```
-cat << "EOF" >> /etc/caddy/Caddyfile
-suc.cgking.com {
-	encode gzip
-	file_server
-	reverse_proxy localhost:25500
-}
-EOF
-```
-
-使用命令重启caddy2,`systemctl reload caddy`,到这里，后端也就搭建完毕了，我们现在可以在浏览器里面访问我们的后端了
-
-https://suc.cgking.com/version
 
 &#x20;（正常的话，会返回下面的信息）
 
-```
-subconverter v0.7.1 backend
-```
+`subconverter v0.7.2-a24cb7c backend`
 
 ## 三、搭建Sub-Web前端
 
@@ -139,13 +83,13 @@ yarn serve
 也可以看这个教程[https://www.back2me.cn/skills/clash.html](https://www.back2me.cn/skills/clash.html)
 
 {% hint style="info" %}
-[https://subcon.dlj.tf/](https://subcon.dlj.tf)
+[https://subcon.dlj.tf/](https://subcon.dlj.tf/)
 
-[https://acl4ssr-sub.github.io/](https://acl4ssr-sub.github.io)  ac4ssr大佬
+[https://acl4ssr-sub.github.io/](https://acl4ssr-sub.github.io/)  ac4ssr大佬
 
-[https://subcon.dlj.tf/](https://subcon.dlj.tf)   TindyX大佬
+[https://subcon.dlj.tf/](https://subcon.dlj.tf/)   TindyX大佬
 
-[https://bianyuan.xyz/](https://bianyuan.xyz)
+[https://bianyuan.xyz/](https://bianyuan.xyz/)
 {% endhint %}
 
 CTRL+C ，退出当前调试，然后执行下面的命令进行打包：

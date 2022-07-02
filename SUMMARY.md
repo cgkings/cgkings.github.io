@@ -4,7 +4,7 @@
 
 ## EMBY & jellyfin <a href="#emby" id="emby"></a>
 
-* [emby手册](https://embywiki.911997.xyz)
+* [emby手册](https://embywiki.911997.xyz/)
 * [jellyfin](emby/jellyfin.md)
 * [emby开心版](emby/emby-kai-xin-ban.md)
 
