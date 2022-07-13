@@ -1,6 +1,6 @@
 # 部署攻略=>files.gallery文件管理
 
-[files.gallery官网](https://www.files.gallery)
+[files.gallery官网](https://www.files.gallery/)
 
 pre-step:下载并配置index.php
 
