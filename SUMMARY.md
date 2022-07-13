@@ -21,7 +21,7 @@
 ## FQ
 
 * [Heroku 搭建 V2+CF 方法教程](fq/heroku-da-jian-v2+cf-fang-fa-jiao-cheng.md)
-* [部署攻略==》X-UI](fq/bu-shu-gong-lve-xui.md)
+* [部署攻略=》X-UI](fq/fq-da-jian-gong-ju-jie-shao.md)
 * [申请泛域名证书](fq/shen-qing-fan-yu-ming-zheng-shu.md)
 * [部署攻略=》订阅转换器](fq/bu-shu-gong-lve-ding-yue-zhuan-huan-qi.md)
 * [cloudflare自选IP+caddy2反代](fq/untitled.md)
