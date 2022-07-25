@@ -460,7 +460,7 @@ autoremove-torrents -v -c /home/art/config.yml
 command -v autoremove-torrents
 ```
 
-![](../.gitbook/assets/image.png)
+![](<../.gitbook/assets/image (11).png>)
 
 添加计划任务：
 
