@@ -33,7 +33,7 @@ my_task:
     remove_low_download:
       status: Downloading
       excluded_categories: 1.pt-down
-      remove: last_activity > 900 or download_speed < 50 or create_time > 1800 and min_connected_leecher < 2 and average_uploadspeed < 10
+      remove: last_activity > 900 or download_speed < 50 or create_time > 1800 and connected_leecher < 1 and average_uploadspeed < 10
     remove_low_upload:
       status: uploading
       excluded_categories: 1.pt-down
