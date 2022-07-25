@@ -1,12 +1,22 @@
 # Autoremove-torrents删种策略
 
-### 删种策略 <a href="#h_479886858_19" id="h_479886858_19"></a>
-
 #### Autoremove torrents 官方文档： <a href="#h_479886858_20" id="h_479886858_20"></a>
 
 [配置 - autoremove-torrents 1.5.3 文档](https://link.zhihu.com/?target=https%3A//autoremove-torrents.readthedocs.io/zh\_CN/latest/config.html%23part-1-task-name)
 
-#### 黑车 <a href="#h_479886858_21" id="h_479886858_21"></a>
+## 自用删种策略 <a href="#h_479886858_21" id="h_479886858_21"></a>
+
+
+
+
+
+
+
+
+
+## 备用删种策略
+
+### 黑车 <a href="#h_479886858_21" id="h_479886858_21"></a>
 
 删除下载速度远超上传的种子
 
@@ -27,7 +37,7 @@ clean_by_speed:
 
 HR种子：ex. 如下载大于50%触发HR，可额外附加progress < 50
 
-#### 慢车 <a href="#h_479886858_22" id="h_479886858_22"></a>
+### 慢车 <a href="#h_479886858_22" id="h_479886858_22"></a>
 
 * 2小时内慢速上传
 
@@ -35,9 +45,7 @@ HR种子：ex. 如下载大于50%触发HR，可额外附加progress < 50
 remove: create_time > 7200 and (average_uploadspeed < 500 or ratio < 1)
 ```
 
-#### 删除完成的种子 <a href="#h_479886858_23" id="h_479886858_23"></a>
-
-* 低速种策略1
+### 低速种策略1
 
 ```yaml
 clean_Seeding_S1:
@@ -48,7 +56,7 @@ clean_Seeding_S1:
       remove: (leecher < 3 and upload_speed < 50) or (average_uploadspeed < 400)
 ```
 
-* 低速种策略2
+### 低速种策略2
 
 ```yaml
 clean_Seeding_S2:
@@ -59,7 +67,7 @@ clean_Seeding_S2:
       remove: upload_speed < 2 or connected_leecher < 1
 ```
 
-#### 超时下载 <a href="#h_479886858_24" id="h_479886858_24"></a>
+### 超时下载 <a href="#h_479886858_24" id="h_479886858_24"></a>
 
 * 24小时内未完成删除
 
@@ -70,7 +78,7 @@ clean_Seeding_S2:
       remove: progress < 100 and create_time > 86400
 ```
 
-#### HR 删种 <a href="#h_479886858_25" id="h_479886858_25"></a>
+### HR 删种 <a href="#h_479886858_25" id="h_479886858_25"></a>
 
 * 做种超过140h后删除（可根据不同站点自己设置时间）
 
@@ -78,7 +86,7 @@ clean_Seeding_S2:
 remove: seeding_time > 504000 and average_uploadspeed < 400
 ```
 
-#### 限制最大下载数 <a href="#h_479886858_26" id="h_479886858_26"></a>
+### 限制最大下载数 <a href="#h_479886858_26" id="h_479886858_26"></a>
 
 ```yaml
 limit_max_torrents:
@@ -91,7 +99,7 @@ limit_max_torrents:
         action: remove-inactive-seeds
 ```
 
-#### 其他策略 <a href="#h_479886858_27" id="h_479886858_27"></a>
+### 其他策略 <a href="#h_479886858_27" id="h_479886858_27"></a>
 
 * 限制最大上传量（针对某些非VIP 100%黑种站）：upload\_ratio: 3
 * 根据做种人数/下载人数：
