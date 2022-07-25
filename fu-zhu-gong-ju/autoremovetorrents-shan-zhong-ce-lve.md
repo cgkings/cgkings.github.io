@@ -1,3 +1,7 @@
+---
+description: 转自https://zhuanlan.zhihu.com/p/479886858
+---
+
 # Autoremove-torrents删种策略
 
 #### Autoremove torrents 官方文档： <a href="#h_479886858_20" id="h_479886858_20"></a>
