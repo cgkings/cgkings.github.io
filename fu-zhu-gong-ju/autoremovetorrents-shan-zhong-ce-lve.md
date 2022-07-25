@@ -10,13 +10,39 @@ description: 转自https://zhuanlan.zhihu.com/p/479886858
 
 ## 自用删种策略 <a href="#h_479886858_21" id="h_479886858_21"></a>
 
-
-
-
-
-
-
-
+```
+my_task:
+# Part 2: BT客户端登录信息,可以管理其他机的客户端
+  client: qbittorrent
+  host: http://127.0.0.1:8071
+  username: admin
+  password: adminadmin
+# Part 3: 策略块（删除种子的条件）
+  strategies:
+    # Part I: 策略名称
+    remove_low_disk:
+      # Part II: 筛选过滤器,过滤器定义了删除条件应用的范围,多个过滤器是且的关系,顺序执行过滤
+      excluded_status: Downloading
+      excluded_categories: 1.pt-down
+      excluded_trackers: tracker.totheglory.im
+      # Part III: 删除条件,多个删除条件之间是或的关系,顺序应用删除条件
+      free_space:
+        min: 300
+        path: /home/qbt-pter/downloads
+        action: remove-slow-upload-seeds
+    remove_low_download:
+      status: Downloading
+      excluded_categories: 1.pt-down
+      remove: last_activity > 900 or download_speed < 50 or create_time > 1800 and min_connected_leecher < 2 and average_uploadspeed < 10
+    remove_low_upload:
+      status: uploading
+      excluded_categories: 1.pt-down
+      remove: upload_speed < 2 or connected_leecher < 1
+      #delete_data: true
+    # 一个任务块可以包括多个策略块...
+# Part 4: 是否在删除种子的同时也删除数据。如果此字段未指定,则默认值为false
+  delete_data: true
+```
 
 ## 备用删种策略
 
