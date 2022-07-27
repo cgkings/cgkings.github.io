@@ -148,7 +148,7 @@ docker run -d \
 
 > 缺点在于与极其老旧的BT客户端连线会失败。
 
-![](<../.gitbook/assets/image (1).png>)
+![](<../.gitbook/assets/image (1) (1).png>)
 
 #### Trackers设置
 
@@ -158,18 +158,18 @@ docker run -d \
 
 > best.txt相比all.txt，连接超时的Trackers更少，可以节省网络资源。
 
-![](<../.gitbook/assets/image (2).png>)
+![](<../.gitbook/assets/image (2) (1).png>)
 
 ![](<../.gitbook/assets/image (7).png>)
 
-![](<../.gitbook/assets/image (9).png>)
+![](<../.gitbook/assets/image (9) (1).png>)
 
 #### 网络设置
 
 网络接口建议设置为外网接口加所有地址，以免浪费网络资源。\
 
 
-![](<../.gitbook/assets/image (4).png>)
+![](<../.gitbook/assets/image (4) (1).png>)
 
 `与 peers 连接的服务类型（ToS）`建议设置为`0`以减少流量特征。\
 
@@ -199,7 +199,7 @@ docker run -d \
 Qbittorrent默认有连接数限制，主机性能足够可以考虑全部关闭。\
 
 
-![](../.gitbook/assets/image.png)
+![](<../.gitbook/assets/image (9).png>)
 
 ### 测试是否生效
 

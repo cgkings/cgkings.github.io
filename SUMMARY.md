@@ -10,11 +10,12 @@
 ## PT站点篇
 
 * [PT站点介绍](pt-zhan-dian-pian/pt-zhan-dian-jie-shao.md)
+* [PT站点政策](pt-zhan-dian-pian/pt-zhan-dian-zheng-ce.md)
 
 ## 设备篇
 
 * [本地设备](she-bei-pian/ben-di-she-bei.md)
-* [远程设备](she-bei-pian/yuan-cheng-she-bei.md)
+* [常见独服／盒子](she-bei-pian/chang-jian-du-fu-he-zi.md)
 
 ## 下载工具
 
