@@ -26,7 +26,7 @@
 
 ## 辅助工具
 
-* [Page 1](fu-zhu-gong-ju/page-1.md)
+* [mktorrent](fu-zhu-gong-ju/mktorrent.md)
 * [Flexget](fu-zhu-gong-ju/flexget.md)
 * [Autoremove-torrents](fu-zhu-gong-ju/autoremove-torrents.md)
 * [Autoremove-torrents删种策略](fu-zhu-gong-ju/autoremovetorrents-shan-zhong-ce-lve.md)
