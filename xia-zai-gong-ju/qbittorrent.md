@@ -158,18 +158,18 @@ docker run -d \
 
 > best.txt相比all.txt，连接超时的Trackers更少，可以节省网络资源。
 
-![](<../.gitbook/assets/image (2) (1).png>)
+![](<../.gitbook/assets/image (2).png>)
 
 ![](<../.gitbook/assets/image (7).png>)
 
-![](<../.gitbook/assets/image (9) (1).png>)
+![](<../.gitbook/assets/image (9).png>)
 
 #### 网络设置
 
 网络接口建议设置为外网接口加所有地址，以免浪费网络资源。\
 
 
-![](<../.gitbook/assets/image (4) (1).png>)
+![](<../.gitbook/assets/image (4).png>)
 
 `与 peers 连接的服务类型（ToS）`建议设置为`0`以减少流量特征。\
 
@@ -192,14 +192,14 @@ docker run -d \
 3. 磁盘缓存建议设置为`-1`，让程序自己管理。
 4. 磁盘缓存过期时间间隔建议设置为`15`，即最快刷新。
 
-![](<../.gitbook/assets/image (3).png>)
+![](<../.gitbook/assets/image (3) (1).png>)
 
 #### 连接限制
 
 Qbittorrent默认有连接数限制，主机性能足够可以考虑全部关闭。\
 
 
-![](<../.gitbook/assets/image (9).png>)
+![](<../.gitbook/assets/image (1).png>)
 
 ### 测试是否生效
 

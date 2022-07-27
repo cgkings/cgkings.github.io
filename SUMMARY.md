@@ -9,6 +9,7 @@
 
 ## PT站点篇
 
+* [PT黑话](pt-zhan-dian-pian/pt-hei-hua.md)
 * [PT站点介绍](pt-zhan-dian-pian/pt-zhan-dian-jie-shao.md)
 * [PT站点政策](pt-zhan-dian-pian/pt-zhan-dian-zheng-ce.md)
 
@@ -25,6 +26,7 @@
 
 ## 辅助工具
 
+* [Page 1](fu-zhu-gong-ju/page-1.md)
 * [Flexget](fu-zhu-gong-ju/flexget.md)
 * [Autoremove-torrents](fu-zhu-gong-ju/autoremove-torrents.md)
 * [Autoremove-torrents删种策略](fu-zhu-gong-ju/autoremovetorrents-shan-zhong-ce-lve.md)

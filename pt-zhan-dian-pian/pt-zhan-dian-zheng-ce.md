@@ -1,8 +1,13 @@
 # PT站点政策
 
+## 用户规范 <a href="#yong-hu-gui-fan" id="yong-hu-gui-fan"></a>
 
+对于用户，无论是公网 PT 站还是教育网 PT 站，往往都有以下要求：
 
-![](<../.gitbook/assets/image (1).png>)
+1. 上传、下载量：新手考核计划一般为一个月内 `>=50GB` 的上传下载量。部分教育网 PT 站可能没有新手考核要求。
+2. 分享率（上传量/下载量）：PT 站的优质资源离不开各位用户的分享和做种。为了减少吸血鬼用户的影响，几乎所有 PT 站点都会要求用户的风险率超过一定值。除此之外，用户分享率与用户等级相关，如果风险率低于标准会自动回退到较低的用户等级。
+3. 魔力值（Bonus points，即积分，获得于用户赠送、活动奖励或做种）：魔力值可以用于兑换站内头衔、更改用户名、消除广告，甚至至博彩小游戏（例如赌球或 24 点，常见于世界杯期间）。
+4. 最小做种时间：为了保障种子活跃度，一些 PT 站严格禁止下完就跑（称为 H\&R, Hit and Run）的行为，要求用户至少持续做种一定时间）。摘录一段 OpenCD 的规则作为参考。
 
 ## PT站政策
 
@@ -10,17 +15,17 @@
 
 ### 1 盒子限制政策
 
-![](<../.gitbook/assets/image (4).png>)
+![](<../.gitbook/assets/image (12).png>)
 
-![](../.gitbook/assets/image.png)
+![](<../.gitbook/assets/image (13).png>)
 
 ### 2 HR考核政策
 
-![](<../.gitbook/assets/image (12).png>)
+![](<../.gitbook/assets/image (14).png>)
 
 ### 3 定期考核政策
 
-![](<../.gitbook/assets/image (2).png>)
+![](<../.gitbook/assets/image (3).png>)
 
 
 

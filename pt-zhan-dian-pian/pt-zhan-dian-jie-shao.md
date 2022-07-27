@@ -4,7 +4,7 @@
 
 那个思维导图就不上了，从数据上看看各站的长项吧
 
-![](<../.gitbook/assets/image (1).png>)
+![](../.gitbook/assets/image.png)
 
 国内 PT 站可以划分为两个系别：**教育网 PT 站** 与 **公网 PT 站**。
 
