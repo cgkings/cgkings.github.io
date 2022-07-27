@@ -2,7 +2,13 @@
 
 抄作业
 
+<details>
 
+<summary>盒子</summary>
+
+
+
+</details>
 
 * [OneProvider](https://oneprovider.com/dedicated-servers/paris-france)\
   简称 op。作为盒子使用时一般买的都是 OP 法国巴黎的机器，巴黎的机器基本都是转卖的 Scaleway 的机器\
