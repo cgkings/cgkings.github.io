@@ -1,17 +1,12 @@
 # Table of contents
 
 * [前言](README.md)
+* [PT站点篇](pt-zhan-dian-pian.md)
 
 ## 解决方案
 
 * [自动组建影视中心](jie-jue-fang-an/zi-dong-zu-jian-ying-shi-zhong-xin.md)
 * [PT站刷流方案](jie-jue-fang-an/pt-zhan-shua-liu-fang-an.md)
-
-## PT站点篇
-
-* [PT站点篇](pt-zhan-dian-pian/pt-zhan-dian-pian.md)
-* [PT站点介绍](pt-zhan-dian-pian/pt-zhan-dian-jie-shao.md)
-* [PT站点政策](pt-zhan-dian-pian/pt-zhan-dian-zheng-ce.md)
 
 ## 设备篇
 
