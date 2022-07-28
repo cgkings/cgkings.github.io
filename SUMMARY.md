@@ -9,7 +9,7 @@
 
 ## PT站点篇
 
-* [PT黑话](pt-zhan-dian-pian/pt-hei-hua.md)
+* [PT站点篇](pt-zhan-dian-pian/pt-zhan-dian-pian.md)
 * [PT站点介绍](pt-zhan-dian-pian/pt-zhan-dian-jie-shao.md)
 * [PT站点政策](pt-zhan-dian-pian/pt-zhan-dian-zheng-ce.md)
 
