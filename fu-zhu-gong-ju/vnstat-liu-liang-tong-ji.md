@@ -1,9 +1,3 @@
----
-cover: >-
-  https://images.unsplash.com/photo-1501526029524-a8ea952b15be?crop=entropy&cs=tinysrgb&fm=jpg&ixid=MnwxOTcwMjR8MHwxfHNlYXJjaHw3fHx0cmFuc2ZlcnxlbnwwfHx8fDE2NTg5OTQwMzk&ixlib=rb-1.2.1&q=80
-coverY: 0
----
-
 # Vnstat流量统计
 
 ### 查看流量统计 Vnstat <a href="#h_479886858_29" id="h_479886858_29"></a>

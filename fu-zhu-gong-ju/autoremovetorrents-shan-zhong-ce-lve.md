@@ -1,7 +1,5 @@
 ---
 description: 转自https://zhuanlan.zhihu.com/p/479886858
-cover: >-
-  https://images.unsplash.com/photo-1457530378978-8bac673b8062?crop=entropy&cs=tinysrgb&fm=jpg&ixid=MnwxOTcwMjR8MHwxfHNlYXJjaHwyfHxzZWVkfGVufDB8fHx8MTY1ODk4MDE3Mg&ixlib=rb-1.2.1&q=80
 coverY: 0
 ---
 
