@@ -1,7 +1,7 @@
 # Table of contents
 
 * [前言](README.md)
-* [PT站点篇](pt-zhan-dian-pian.md)
+* [PT站点篇](pt-zhan-dian-pian/pt-hei-hua.md)
 
 ## 解决方案
 

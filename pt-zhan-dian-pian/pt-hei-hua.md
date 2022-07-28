@@ -42,7 +42,7 @@ coverY: 0
 
 那个思维导图就不上了，从数据上看看各站的长项吧
 
-![](.gitbook/assets/image.png)
+![](../.gitbook/assets/image.png)
 
 国内 PT 站可以划分为两个系别：**教育网 PT 站** 与 **公网 PT 站**。
 
@@ -115,17 +115,17 @@ coverY: 0
 
 ### 1 盒子限制政策
 
-![](<.gitbook/assets/image (12).png>)
+![](<../.gitbook/assets/image (12).png>)
 
-![](<.gitbook/assets/image (13).png>)
+![](<../.gitbook/assets/image (13).png>)
 
 ### 2 HR考核政策
 
-![](<.gitbook/assets/image (14).png>)
+![](<../.gitbook/assets/image (14).png>)
 
 ### 3 定期考核政策
 
-![](<.gitbook/assets/image (3).png>)
+![](<../.gitbook/assets/image (3).png>)
 
 
 
