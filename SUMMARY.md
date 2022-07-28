@@ -1,31 +1,34 @@
 # Table of contents
 
-* [说明](README.md)
+* [前言](README.md)
 
-## prober
+## 解决方案
 
-* [部署攻略=》哪吒探针](prober/bu-shu-gong-lve-na-zha-tan-zhen.md)
+* [自动组建影视中心](jie-jue-fang-an/zi-dong-zu-jian-ying-shi-zhong-xin.md)
+* [PT站刷流方案](jie-jue-fang-an/pt-zhan-shua-liu-fang-an.md)
 
-## FQ部署 <a href="#linux" id="linux"></a>
+## PT站点篇
 
-* [部署攻略=》gallery文件管理](linux/bu-shu-gong-lve-gallery-wen-jian-guan-li.md)
-* [部署攻略=》X-UI](fq/fq-da-jian-gong-ju-jie-shao.md)
-* [部署攻略=》订阅转换器](fq/bu-shu-gong-lve-ding-yue-zhuan-huan-qi.md)
-* [部署攻略=》MyUrls](fq/bu-shu-gong-lve-myurls.md)
+* [PT黑话](pt-zhan-dian-pian/pt-hei-hua.md)
+* [PT站点介绍](pt-zhan-dian-pian/pt-zhan-dian-jie-shao.md)
+* [PT站点政策](pt-zhan-dian-pian/pt-zhan-dian-zheng-ce.md)
 
-## EMBY & jellyfin <a href="#emby" id="emby"></a>
+## 设备篇
 
-* [emby手册](https://embywiki.911997.xyz/)
-* [jellyfin](emby/jellyfin.md)
+* [本地设备](she-bei-pian/ben-di-she-bei.md)
+* [常见独服／盒子](she-bei-pian/chang-jian-du-fu-he-zi.md)
 
-## FQ
+## 下载工具
 
-* [Heroku 搭建 V2+CF 方法教程](fq/heroku-da-jian-v2+cf-fang-fa-jiao-cheng.md)
-* [申请泛域名证书](fq/shen-qing-fan-yu-ming-zheng-shu.md)
-* [cloudflare自选IP+caddy2反代](fq/untitled.md)
-* [CloudFlare自选IP 并自动修改DNSPOD](fq/cloudflare-zi-xuan-ip-bing-pei-zhi-dns-she-zhi-15-fen-zhong-zi-dong-geng-huan-xin-ip-jia-kuai-wang-z.md)
-* [Caddy2 简明教程](fq/caddy2-jian-ming-jiao-cheng.md)
+* [Qbittorrent](xia-zai-gong-ju/qbittorrent.md)
+* [Transmission](xia-zai-gong-ju/transmission.md)
+* [Aria2](xia-zai-gong-ju/aria2.md)
 
-## 甲骨文
+## 辅助工具
 
-* [甲骨文云二三事](jia-gu-wen/jia-gu-wen-yun-er-san-shi.md)
+* [mktorrent](fu-zhu-gong-ju/page-1.md)
+* [Flexget](fu-zhu-gong-ju/flexget.md)
+* [Autoremove-torrents](fu-zhu-gong-ju/autoremove-torrents.md)
+* [Autoremove-torrents删种策略](fu-zhu-gong-ju/autoremovetorrents-shan-zhong-ce-lve.md)
+* [Vnstat流量统计](fu-zhu-gong-ju/vnstat-liu-liang-tong-ji.md)
+* [IOTOP查询IO情况](fu-zhu-gong-ju/iotop-cha-xun-io-qing-kuang.md)
