@@ -1,5 +1,6 @@
 ---
 description: 转自https://zhuanlan.zhihu.com/p/479886858
+coverY: 0
 ---
 
 # Autoremove-torrents删种策略

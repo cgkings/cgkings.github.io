@@ -1,3 +1,9 @@
+---
+cover: >-
+  https://images.unsplash.com/photo-1604346336129-b18c9fbcd1d3?crop=entropy&cs=tinysrgb&fm=jpg&ixid=MnwxOTcwMjR8MHwxfHNlYXJjaHw1fHxhcmlhfGVufDB8fHx8MTY1ODk4MDIwNg&ixlib=rb-1.2.1&q=80
+coverY: 0
+---
+
 # Aria2
 
 ## DOCKER安装 aria2 pro

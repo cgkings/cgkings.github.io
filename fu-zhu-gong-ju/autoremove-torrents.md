@@ -1,5 +1,8 @@
 ---
 description: 转自https://autoremove-torrents.readthedocs.io/zh_CN/latest/index.html
+cover: >-
+  https://images.unsplash.com/photo-1593510987046-1f8fcfc512a0?crop=entropy&cs=tinysrgb&fm=jpg&ixid=MnwxOTcwMjR8MHwxfHNlYXJjaHw0fHxkZWxldGV8ZW58MHx8fHwxNjU4OTc5Nzky&ixlib=rb-1.2.1&q=80
+coverY: 0
 ---
 
 # Autoremove-torrents

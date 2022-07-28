@@ -1,3 +1,9 @@
+---
+cover: >-
+  https://images.unsplash.com/photo-1530836176759-510f58baebf4?crop=entropy&cs=tinysrgb&fm=jpg&ixid=MnwxOTcwMjR8MHwxfHNlYXJjaHwxfHxzZWVkfGVufDB8fHx8MTY1ODk4MDE3Mg&ixlib=rb-1.2.1&q=80
+coverY: 0
+---
+
 # Qbittorrent
 
 ## 安装

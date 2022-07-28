@@ -1,3 +1,9 @@
+---
+cover: >-
+  https://images.unsplash.com/photo-1642507229657-51fc87152fc7?crop=entropy&cs=tinysrgb&fm=jpg&ixid=MnwxOTcwMjR8MHwxfHNlYXJjaHwyfHx1cGxvYWRlcnxlbnwwfHx8fDE2NTg5Nzk3MzA&ixlib=rb-1.2.1&q=80
+coverY: 0
+---
+
 # 前言
 
 PT (Private Tracker) 是一种基于私有 BT Tracker 服务器的资源传播形式，经授权的用户使用受允许的客户端进行种子制作与下载。相较于传统 BT 和 emule，PT 站往往采取了严格的邀请制度以及免责制度来规避法律风险，同时要求用户客户端开启传输加密以绕过运营商的检测策略。当然，从实际上来说 PT 站的运营、使用仍然是违背了各国版权法的。
