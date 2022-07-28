@@ -1,3 +1,7 @@
+---
+coverY: 0
+---
+
 # 部署攻略=》哪吒探针
 
 哪吒探针原作者GitHub：[https://github.com/naiba/nezha](https://github.com/naiba/nezha)

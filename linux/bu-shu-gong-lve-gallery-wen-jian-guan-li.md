@@ -1,4 +1,8 @@
-# 部署攻略=>files.gallery文件管理
+---
+coverY: 0
+---
+
+# 部署攻略=》gallery文件管理
 
 [files.gallery官网](https://www.files.gallery/)
 
