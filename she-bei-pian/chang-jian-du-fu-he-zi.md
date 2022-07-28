@@ -1,3 +1,9 @@
+---
+cover: >-
+  https://images.unsplash.com/photo-1558494949-ef010cbdcc31?crop=entropy&cs=tinysrgb&fm=jpg&ixid=MnwxOTcwMjR8MHwxfHNlYXJjaHwxfHxzZXJ2ZXJ8ZW58MHx8fHwxNjU4OTk0MTg3&ixlib=rb-1.2.1&q=80
+coverY: 0
+---
+
 # 常见独服／盒子
 
 抄作业

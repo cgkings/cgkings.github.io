@@ -1,3 +1,9 @@
+---
+cover: >-
+  https://images.unsplash.com/photo-1484662020986-75935d2ebc66?crop=entropy&cs=tinysrgb&fm=jpg&ixid=MnwxOTcwMjR8MHwxfHNlYXJjaHw4fHxoZGR8ZW58MHx8fHwxNjU4OTk0MTI5&ixlib=rb-1.2.1&q=80
+coverY: 0
+---
+
 # IOTOP查询IO情况
 
 iotop命令是一个用来监视磁盘I/O使用状况的top类工具。iotop具有与top相似的UI，其中包括PID、用户、I/O、进程等相关信息。
