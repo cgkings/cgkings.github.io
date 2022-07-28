@@ -1,6 +1,5 @@
 ---
 description: 转自https://autoremove-torrents.readthedocs.io/zh_CN/latest/index.html
-layout: editorial
 ---
 
 # Autoremove-torrents
