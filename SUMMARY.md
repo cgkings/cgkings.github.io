@@ -2,19 +2,21 @@
 
 * [说明](README.md)
 
+## prober
+
+* [部署攻略=》哪吒探针](prober/bu-shu-gong-lve-na-zha-tan-zhen.md)
+
+## FQ部署 <a href="#linux" id="linux"></a>
+
+* [部署攻略=》gallery文件管理](linux/bu-shu-gong-lve-gallery-wen-jian-guan-li.md)
+* [部署攻略=》X-UI](fq/fq-da-jian-gong-ju-jie-shao.md)
+* [部署攻略=》订阅转换器](fq/bu-shu-gong-lve-ding-yue-zhuan-huan-qi.md)
+* [部署攻略=》MyUrls](fq/bu-shu-gong-lve-myurls.md)
+
 ## EMBY & jellyfin <a href="#emby" id="emby"></a>
 
 * [emby手册](https://embywiki.911997.xyz/)
 * [jellyfin](emby/jellyfin.md)
-
-## LINUX系统 <a href="#linux" id="linux"></a>
-
-* [部署攻略=》哪吒探针](linux/bu-shu-gong-lve-na-zha-tan-zhen.md)
-* [部署攻略=》gallery文件管理](linux/bu-shu-gong-lve-gallery-wen-jian-guan-li.md)
-* [部署攻略=》X-UI](linux/bu-shu-gong-lve-xui.md)
-* [部署攻略=》订阅转换器](linux/bu-shu-gong-lve-ding-yue-zhuan-huan-qi.md)
-* [部署攻略=》MyUrls](linux/bu-shu-gong-lve-myurls.md)
-* [ssh登录设置123](linux/ssh-deng-lu-she-zhi-123.md)
 
 ## FQ
 

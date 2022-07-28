@@ -2,7 +2,7 @@
 description: ⚠️本教程基于掌握基础的服务器操作与代码修改技能之上
 ---
 
-# MyUrls 短链服务部署
+# 部署攻略=》MyUrls
 
 ​[MyUrls](https://github.com/CareyWang/MyUrls) 是基于 golang1.13 与 Redis 实现的本地短链接服务，用于缩短请求链接与短链接还原
 
