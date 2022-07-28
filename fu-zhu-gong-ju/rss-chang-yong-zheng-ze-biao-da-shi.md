@@ -4,6 +4,10 @@ description: 参考：https://www.jianshu.com/p/54e6137ea4e3
 
 # RSS常用正则表达式
 
+
+
+[https://tieba.baidu.com/p/5579905076?pv=1](https://tieba.baidu.com/p/5579905076?pv=1)
+
 qbittorrent已经有一定的自动订阅能力了，通过正则表达式的使用已经完全可以满足我的使用需要，因此也就无需再额外使用Flexget或是IYUUAutoReseed来实现自动订阅和下载了。
 
 例子1：**订阅x265 10bit编码的CHD小组的1080p重编码电影：**
