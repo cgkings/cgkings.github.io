@@ -34,3 +34,7 @@
 ## 甲骨文
 
 * [甲骨文云二三事](jia-gu-wen/jia-gu-wen-yun-er-san-shi.md)
+
+## PVE
+
+* [greencloud999 PVE](pve/greencloud999-pve.md)
