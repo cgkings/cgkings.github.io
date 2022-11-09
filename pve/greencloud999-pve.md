@@ -28,20 +28,18 @@ ff02::2 ip6-allrouters
 EOF
 ```
 
-### 3.安装 Proxmox VE
-
-#### 3.1 调整您的来源列表
+### 3.安装 Proxmox VE : 调整您的来源列表
 
 添加 Proxmox VE 存储库：
 
 ```
-echo "deb [arch=amd64] http://download.proxmox.com/debian/pve bullseye pve-no-subscription" > /etc/apt/sources.list.d/pve-install-repo.list
+echo "deb [arch=amd64] http://download.proxmox.com/debian/pve Bullseye pve-no-subscription" > /etc/apt/sources.list.d/pve-install-repo.list
 ```
 
 将Proxmox VE存储库密钥添加为根（或使用sudo）：
 
 ```
-wget https://enterprise.proxmox.com/debian/proxmox-release-bullseye.gpg -O /etc/apt/trusted.gpg.d/proxmox-release-bullseye.gpg  
+wget -q https://enterprise.proxmox.com/debian/proxmox-release-bullseye.gpg -O /etc/apt/trusted.gpg.d/proxmox-release-bullseye.gpg
 ```
 
 {% hint style="info" %}
@@ -52,46 +50,39 @@ sha512sum /etc/apt/trusted.gpg.d/proxmox-release-bullseye.gpg
 ```
 {% endhint %}
 
-#### 3.2 安装 Proxmox VE 软件包
-
-安装Proxmox VE软件包
+### 4.安装 Proxmox VE :  &#x20;
 
 ```
-apt update && apt full-upgrade && apt install proxmox-ve postfix open-iscsi
+apt update -y && apt full-upgrade -y && apt install -y pve-kernel-5.15 && systemctl reboot
 ```
 
-根据您的需要配置需要用户在安装时输入的软件包。
+请注意，虽然这`pve-kernel-5.15`是 Proxmox VE 7.x 系列的默认稳定内核，但还有一个更新的可选内核可用`pve-kernel-5.19`，可能有助于解决现代系统上的一些与硬件相关的问题。
 
-如果您的网络中有邮件服务器，则应将 postfix 配置为**附属系统**。 然后，您现有的邮件服务器将成为_中继主机_，它将Proxmox VE发送的电子邮件路由到其最终收件人。 如果您不知道在此处输入什么，请选择**“仅本地”**并保留_系统名称_。
-
-#### 3.3 将系统重新启动到Proxmox VE
-
-最后，**重新启动**系统。
+### 5.安装 Proxmox VE :  &#x20;
 
 ```
- systemctl reboot
+apt install -y proxmox-ve postfix open-iscsi
 ```
 
-#### 3.4 删除 Debian 内核
+根据您的需要配置在安装时需要用户输入的软件包。
 
-Proxmox VE附带了自己的内核，保留Debian默认内核可能会导致升级问题，例如，使用Debian点版本。 因此，您必须删除默认的 Debian 内核：
+如果您的网络中有邮件服务器，您应该将 postfix 配置为**卫星系统**。然后，您现有的邮件服务器将成为_中继主机_，它将 Proxmox VE 发送的电子邮件路由到其最终收件人。如果您不知道在此处输入什么，请选择**仅本地**并保持_系统名称_不变。
 
-```
-apt remove linux-image-amd64 'linux-image-5.10*'
-```
+### 6. 删除 Debian 内核
 
-通过运行以下命令更新和检查 grub2 配置：
+Proxmox VE附带了自己的内核，保留Debian默认内核可能会导致升级问题，例如，使用Debian点版本。 因此，您必须删除默认的 Debian 内核更新和检查 grub2 配置：
 
 ```
-update-grub
+apt remove linux-image-amd64 'linux-image-5.10*' && update-grub
 ```
 
-#### 3.5 建议：删除操作系统探测器软件包
+### 7. 删除操作系统探测器软件包
 
-软件包会扫描主机的所有分区以创建双引导 GRUB 条目。 但是扫描的分区也可以包括分配给虚拟机的分区，这些分区不想添加为启动项。`os-prober`
+该`os-prober`软件包会扫描主机的所有分区以创建双引导 GRUB 条目。但是扫描的分区还可以包括那些分配给虚拟机的分区，这些分区不想添加为引导条目。
 
-如果您没有将Proxmox VE作为另一个操作系统旁边的双启动安装，则可以安全地删除该软件包：`os-prober`
+如果您没有将 Proxmox VE 作为双启动安装在另一个操作系统旁边，您可以安全地删除该`os-prober`软件包：
 
 ```
-apt remove os-prober
+apt remove os-prober -
 ```
+
