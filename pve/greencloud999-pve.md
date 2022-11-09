@@ -4,7 +4,7 @@
 
 ## 1.安装一个标准的 Debian Bullseye （amd64)
 
-```shell
+```
 apt update --fix-missing && apt install -y curl sudo git make wget tree vim nano tmux htop net-tools parted nethogs screen ntpdate manpages-zh screenfetch file virt-what iperf3 jq expect 2> /dev/null && apt install -y ca-certificates dmidecode findutils dpkg tar zip unzip gzip bzip2 unar p7zip-full pv ffmpeg build-essential ncdu zsh fonts-powerline fuse 2> /dev/null
 ```
 
@@ -14,7 +14,7 @@ apt update --fix-missing && apt install -y curl sudo git make wget tree vim nano
 
 便捷的方法就是复制执行下面的命令：
 
-```shell
+```
 cat > /etc/hosts << EOF
 127.0.0.1       localhost.localdomain localhost
 $(curl -sL ifconfig.me)   $(hostnamectl | grep hostname | awk '{print $3}').proxmox.com $(hostnamectl | grep hostname | awk '{print $3}')
@@ -30,13 +30,13 @@ EOF
 
 添加 Proxmox VE 存储库：
 
-```shell
+```
 echo "deb [arch=amd64] http://download.proxmox.com/debian/pve bullseye pve-no-subscription" > /etc/apt/sources.list.d/pve-install-repo.list
 ```
 
 将Proxmox VE存储库密钥添加为根（或使用sudo）：
 
-```shell
+```
 wget -q https://enterprise.proxmox.com/debian/proxmox-release-bullseye.gpg -O /etc/apt/trusted.gpg.d/proxmox-release-bullseye.gpg
 ```
 
@@ -50,7 +50,7 @@ sha512sum /etc/apt/trusted.gpg.d/proxmox-release-bullseye.gpg
 
 ## 4.安装 Proxmox VE :  &#x20;
 
-```shell
+```
 apt update -y && apt full-upgrade -y && apt install -y pve-kernel-5.15 && systemctl reboot
 ```
 
@@ -58,7 +58,7 @@ apt update -y && apt full-upgrade -y && apt install -y pve-kernel-5.15 && system
 
 ## 5.安装 Proxmox VE :  &#x20;
 
-```shell
+```
 apt install -y proxmox-ve postfix open-iscsi
 ```
 
@@ -70,7 +70,7 @@ apt install -y proxmox-ve postfix open-iscsi
 
 Proxmox VE附带了自己的内核，保留Debian默认内核可能会导致升级问题，例如，使用Debian点版本。 因此，您必须删除默认的 Debian 内核更新和检查 grub2 配置：
 
-```shell
+```
 apt remove linux-image-amd64 'linux-image-5.10*' && update-grub
 ```
 
@@ -80,7 +80,7 @@ apt remove linux-image-amd64 'linux-image-5.10*' && update-grub
 
 如果您没有将 Proxmox VE 作为双启动安装在另一个操作系统旁边，您可以安全地删除该`os-prober`软件包：
 
-```shell
+```
 apt remove os-prober -y
 ```
 
@@ -88,7 +88,7 @@ apt remove os-prober -y
 
 ## 1.配置网卡
 
-```shell
+```
 cat > /etc/network/interfaces << EOF
 source /etc/network/interfaces.d/*
 
@@ -122,7 +122,11 @@ iface vmbr1 inet static
     post-down iptables -t raw -D PREROUTING -i fwbr+ -j CT --zone 1
 iface vmbr1 inet6 static
     address 2402:a7c0:8100:a015::5eb:9343/64
-EOF && systemctl restart networking
+EOF
+```
+
+```
+systemctl restart networking
 ```
 
 ## 2.配置TCP
@@ -151,7 +155,11 @@ net.ipv6.conf.all.autoconf = 0
 net.ipv6.conf.all.disable_ipv6 = 0
 net.ipv6.conf.all.forwarding = 1
 net.ipv6.conf.all.proxy_ndp = 1
-EOF && sysctl -p
+EOF
+```
+
+```
+sysctl -p
 ```
 
 ## 3.配置HDCP V4
