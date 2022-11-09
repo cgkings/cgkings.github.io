@@ -106,8 +106,8 @@ iface vmbr0 inet static
     bridge-fd 0
 
 iface vmbr0 inet6 static
-    address 2402:a7c0:8100:a015::5eb:9342/64
-    gateway 2402:a7c0:8100:a015::1
+    address $(ip -6 a|grep -m 1 global|awk '{print $2}'|awk -F "/" '{print $1}')/64
+    gateway $(ip -6 route list | grep -m 1 default | awk '{print $3}')
 
 auto vmbr1
 iface vmbr1 inet static
@@ -116,12 +116,11 @@ iface vmbr1 inet static
     bridge_ports none
     bridge_stp off
     bridge_fd 0
+    post-up echo 1 > /proc/sys/net/ipv4/ip_forward
     post-up iptables -t nat -A POSTROUTING -s '192.168.0.0/24' -o vmbr0 -j MASQUERADE
     post-down iptables -t nat -D POSTROUTING -s '192.168.0.0/24' -o vmbr0 -j MASQUERADE
     post-up iptables -t raw -I PREROUTING -i fwbr+ -j CT --zone 1
     post-down iptables -t raw -D PREROUTING -i fwbr+ -j CT --zone 1
-iface vmbr1 inet6 static
-    address 2402:a7c0:8100:a015::5eb:9343/64
 EOF
 ```
 
@@ -132,34 +131,7 @@ systemctl restart networking
 ## 2.配置TCP
 
 ```
-cat > /etc/sysctl.conf << EOF
-fs.file-max = 6553500
-
-net.ipv4.tcp_congestion_control=bbr
-net.core.default_qdisc=fq
-net.ipv4.conf.all.rp_filter=1
-net.ipv4.icmp_echo_ignore_broadcasts=1
-net.ipv4.conf.default.forwarding=1
-net.ipv4.conf.default.proxy_arp = 0
-net.ipv4.ip_forward=1
-kernel.sysrq = 1
-net.ipv4.conf.default.send_redirects = 1
-net.ipv4.conf.all.send_redirects = 0
-
-net.ipv4.ip_forward= 1
-net.ipv6.conf.all.accept_dad = 1
-net.ipv6.conf.all.accept_ra = 0
-net.ipv6.conf.all.accept_redirects = 1
-net.ipv6.conf.all.accept_source_route = 0
-net.ipv6.conf.all.autoconf = 0
-net.ipv6.conf.all.disable_ipv6 = 0
-net.ipv6.conf.all.forwarding = 1
-net.ipv6.conf.all.proxy_ndp = 1
-EOF
-```
-
-```
-sysctl -p
+echo "net.ipv6.conf.all.forwarding = 1" >> /etc/sysctl.conf && sysctl -p
 ```
 
 ## 3.配置HDCP V4
