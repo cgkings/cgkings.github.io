@@ -4,15 +4,15 @@
 
 ### 1.安装一个标准的 Debian Bullseye （amd64)
 
-```
-apt update --fix-missing 2> /dev/null | grep packages | cut -d '.' -f 1 && apt install -y curl sudo git make wget tree vim nano tmux htop net-tools parted nethogs screen ntpdate manpages-zh screenfetch file virt-what iperf3 jq expect 2> /dev/null && apt install -y ca-certificates dmidecode findutils dpkg tar zip unzip gzip bzip2 unar p7zip-full pv ffmpeg build-essential ncdu zsh fonts-powerline fuse 2> /dev/null
+```shell
+apt update --fix-missing && apt install -y curl sudo git make wget tree vim nano tmux htop net-tools parted nethogs screen ntpdate manpages-zh screenfetch file virt-what iperf3 jq expect 2> /dev/null && apt install -y ca-certificates dmidecode findutils dpkg tar zip unzip gzip bzip2 unar p7zip-full pv ffmpeg build-essential ncdu zsh fonts-powerline fuse 2> /dev/null
 ```
 
 ### 2.为您的 IP 地址添加 /etc/hosts 条目
 
 例如，如果您的IP地址是192.168.15.77，并且您的主机名prox4m1，那么您/etc/hosts文件可能如下所:`192.168.15.77 prox4m1.proxmox.com prox4m1`
 
-```
+```shell
 cat > /etc/hosts << EOF
 127.0.0.1       localhost.localdomain localhost
 $(curl -sL ifconfig.me)   $(hostnamectl | grep hostname | awk '{print $3}').proxmox.com $(hostnamectl | grep hostname | awk '{print $3}')
@@ -28,13 +28,13 @@ EOF
 
 添加 Proxmox VE 存储库：
 
-```
-echo "deb [arch=amd64] http://download.proxmox.com/debian/pve Bullseye pve-no-subscription" > /etc/apt/sources.list.d/pve-install-repo.list
+```shell
+echo "deb [arch=amd64] http://download.proxmox.com/debian/pve bullseye pve-no-subscription" > /etc/apt/sources.list.d/pve-install-repo.list
 ```
 
 将Proxmox VE存储库密钥添加为根（或使用sudo）：
 
-```
+```shell
 wget -q https://enterprise.proxmox.com/debian/proxmox-release-bullseye.gpg -O /etc/apt/trusted.gpg.d/proxmox-release-bullseye.gpg
 ```
 
