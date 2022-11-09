@@ -2,37 +2,31 @@
 
 ## 一.Debian11 部署PVE
 
-### 1.安装一个标准的 Debian Bullseye （amd64）
+### 1.安装一个标准的 Debian Bullseye （amd64)
+
+
+
+```
+apt update --fix-missing 2> /dev/null | grep packages | cut -d '.' -f 1 && apt install -y curl sudo git make wget tree vim nano tmux htop net-tools parted nethogs screen ntpdate manpages-zh screenfetch file virt-what iperf3 jq expect 2> /dev/null && apt install -y ca-certificates dmidecode findutils dpkg tar zip unzip gzip bzip2 unar p7zip-full pv ffmpeg build-essential ncdu zsh fonts-powerline fuse 2> /dev/null
+```
 
 ### 2.为您的 IP 地址添加 /etc/hosts 条目
 
-计算机的主机名必须可通过/etc/hosts解析。 这意味着在/etc/hosts中，您需要以下条目之一作为主机名：
+例如，如果您的IP地址是192.168.15.77，并且您的主机名prox4m1，那么您/etc/hosts文件可能如下所:`192.168.15.77 prox4m1.proxmox.com prox4m1`
 
-* 1 个 IPv4 或
-* 1 个 IPv6 或
-* 1 个 IPv4 和 1 个 IPv6
 
-**注意**：这也意味着删除默认地址127.0.1.1。
-
-例如，如果您的IP地址是192.168.15.77，并且您的主机名prox4m1，那么您/etc/hosts文件可能如下所示：
 
 ```
-127.0.0.1       localhost
-192.168.15.77   prox4m1.proxmox.com prox4m1
+cat > /etc/hosts << EOF
+127.0.0.1       localhost.localdomain localhost
+$(curl -sL ifconfig.me)   $(hostnamectl | grep hostname | awk '{print $3}').proxmox.com $(hostnamectl | grep hostname | awk '{print $3}')
 
 # The following lines are desirable for IPv6 capable hosts
 ::1     localhost ip6-localhost ip6-loopback
 ff02::1 ip6-allnodes
 ff02::2 ip6-allrouters
+EOF
 ```
-
-您可以使用主机名命令测试您的设置是否正常：
-
-```
-hostname --ip-address
-```
-
-> 192.168.15.77 # should return your IP address here
 
 ### 3.安装 Proxmox VE
 
@@ -47,24 +41,23 @@ echo "deb [arch=amd64] http://download.proxmox.com/debian/pve bullseye pve-no-su
 将Proxmox VE存储库密钥添加为根（或使用sudo）：
 
 ```
-wget https://enterprise.proxmox.com/debian/proxmox-release-bullseye.gpg -O /etc/apt/trusted.gpg.d/proxmox-release-bullseye.gpg 
+wget https://enterprise.proxmox.com/debian/proxmox-release-bullseye.gpg -O /etc/apt/trusted.gpg.d/proxmox-release-bullseye.gpg  
+```
+
+{% hint style="info" %}
+```
 # verify
 sha512sum /etc/apt/trusted.gpg.d/proxmox-release-bullseye.gpg 
-7fb03ec8a1675723d2853b84aa4fdb49a46a3bb72b9951361488bfd19b29aab0a789a4f8c7406e71a69aabbc727c936d3549731c4659ffa1a08f44db8fdcebfa  /etc/apt/trusted.gpg.d/proxmox-release-bullseye.gpg 
+7fb03ec8a1675723d2853b84aa4fdb49a46a3bb72b9951361488bfd19b29aab0a789a4f8c7406e71a69aabbc727c936d3549731c4659ffa1a08f44db8fdcebfa  /etc/apt/trusted.gpg.d/proxmox-release-bullseye.gpg
 ```
-
-通过运行以下命令更新存储库和系统：
-
-```
-apt update && apt full-upgrade
-```
+{% endhint %}
 
 #### 3.2 安装 Proxmox VE 软件包
 
 安装Proxmox VE软件包
 
 ```
-apt install proxmox-ve postfix open-iscsi
+apt update && apt full-upgrade && apt install proxmox-ve postfix open-iscsi
 ```
 
 根据您的需要配置需要用户在安装时输入的软件包。
