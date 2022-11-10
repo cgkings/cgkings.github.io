@@ -17,7 +17,7 @@ apt update --fix-missing && apt install -y curl sudo git make wget tree vim nano
 ```
 cat > /etc/hosts << EOF
 127.0.0.1       localhost.localdomain localhost
-$(curl -sL ifconfig.me)   $(hostnamectl | grep hostname | awk '{print $3}').proxmox.com $(hostnamectl | grep hostname | awk '{print $3}')
+$(curl -sL ifconfig.me)   $(hostnamectl | grep hostname | awk '{print $3}').xgh1.com $(hostnamectl | grep hostname | awk '{print $3}')
 
 # The following lines are desirable for IPv6 capable hosts
 ::1     localhost ip6-localhost ip6-loopback
@@ -124,40 +124,45 @@ iface vmbr1 inet static
 EOF
 ```
 
-```
-systemctl restart networking
-```
+
 
 ```
 cat > /etc/network/interfaces << EOF
+source /etc/network/interfaces.d/*
+
 auto lo
 iface lo inet loopback
 
-auto eth0
-iface eth0 inet static
-     address 164.152.166.199/23
-     gateway 164.152.166.1
-     dns-nameservers 8.8.8.8 8.8.4.4
-iface eth0 inet6 static
-     address 2402:a7c0:8100:a015::5eb:9342/112
-     gateway 2402:a7c0:8100:a015::1
-
-iface eth0 inet manual
+iface ens3 inet manual
 
 auto vmbr0
 iface vmbr0 inet static
-     address 192.168.0.1/24
-     bridge_ports none
-     bridge_stp off
-     bridge_fd 0
-     post-up   /usr/sbin/iptables -t nat -A POSTROUTING -s '192.168.0.1/24' -o enp2s0f0 -j MASQUERADE
-     post-down /usr/sbin/iptables -t nat -D POSTROUTING -s '192.168.0.1/24' -o enp2s0f0 -j MASQUERADE
-     post-up   /usr/sbin/iptables -t raw -I PREROUTING -i fwbr+ -j CT --zone 1
-     post-down /usr/sbin/iptables -t raw -D PREROUTING -i fwbr+ -j CT --zone 1
+    address 164.152.166.199/24
+    #netmask 255.255.254.0
+    gateway 164.152.166.1
+    bridge-ports ens3
+    bridge-stp off
+    bridge-fd 0
 
 iface vmbr0 inet6 static
-     address 2402:a7c0:8100:a015::5eb:9343/112
+    address 2402:a7c0:8100:a015::5eb:9342/64
+    gateway 2402:a7c0:8100:a015::1
+
+auto vmbr1
+iface vmbr1 inet static
+    address 192.168.0.1
+    netmask 255.255.255.0
+    bridge_ports none
+    bridge_stp off
+    bridge_fd 0
+    post-up echo 1 > /proc/sys/net/ipv4/ip_forward
+    post-up iptables -t nat -A POSTROUTING -s '192.168.0.0/24' -o vmbr0 -j MASQUERADE
+    post-down iptables -t nat -D POSTROUTING -s '192.168.0.0/24' -o vmbr0 -j MASQUERADE
 EOF
+```
+
+```
+systemctl restart networking.service
 ```
 
 
@@ -193,9 +198,9 @@ net.ipv6.conf.all.proxy_ndp=1
 EOF
 ```
 
-## 3.配置HDCP V4
+## 3.配置DHCP V4
 
-- 安装HDCP 服务
+- 安装DHCP 服务
 
 ```
 #安装hdcp
@@ -259,7 +264,7 @@ apt -y install ndppd
 ```
 cat > /etc/ndppd.conf << EOF
 proxy vmbr0 {
-  rule 2402:a7c0:8100:a015::5eb:9343/112 {
+  rule 2402:a7c0:8100:a015::5eb:9342/64 {
     static
   }
 }
