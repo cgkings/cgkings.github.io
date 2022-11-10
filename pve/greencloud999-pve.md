@@ -88,6 +88,26 @@ apt remove os-prober -y
 
 ## 1.配置网卡
 
+安装完成后，登录到proxmox的控制台，编辑grub配置文件：
+
+```
+nano /etc/default/grub
+```
+
+修改如下配置，加入net.ifnames=0 biosdevname=0内核启动参数：
+
+```
+GRUB_CMDLINE_LINUX_DEFAULT="quiet net.ifnames=0 biosdevname=0"
+```
+
+更新grub：
+
+```
+update-grub
+```
+
+然后编辑网卡配置文件：
+
 ```
 cat > /etc/network/interfaces << EOF
 source /etc/network/interfaces.d/*
@@ -128,36 +148,31 @@ EOF
 
 ```
 cat > /etc/network/interfaces << EOF
-source /etc/network/interfaces.d/*
-
 auto lo
 iface lo inet loopback
 
-iface ens3 inet manual
+iface eth0 inet manual
 
 auto vmbr0
 iface vmbr0 inet static
-    address 164.152.166.199/24
-    #netmask 255.255.254.0
-    gateway 164.152.166.1
-    bridge-ports ens3
-    bridge-stp off
-    bridge-fd 0
-
-iface vmbr0 inet6 static
-    address 2402:a7c0:8100:a015::5eb:9342/64
-    gateway 2402:a7c0:8100:a015::1
+        address 164.152.166.199/24
+        gateway 164.152.166.1
+        netmask 255.255.254.0
+        dns-nameservers 8.8.8.8 8.8.4.4
+        bridge-ports eth0
+        bridge-stp off
+        bridge-fd 0
 
 auto vmbr1
 iface vmbr1 inet static
-    address 192.168.0.1
-    netmask 255.255.255.0
-    bridge_ports none
-    bridge_stp off
-    bridge_fd 0
-    post-up echo 1 > /proc/sys/net/ipv4/ip_forward
-    post-up iptables -t nat -A POSTROUTING -s '192.168.0.0/24' -o vmbr0 -j MASQUERADE
-    post-down iptables -t nat -D POSTROUTING -s '192.168.0.0/24' -o vmbr0 -j MASQUERADE
+        address 192.168.0.1
+        netmask 255.255.255.0
+        bridge_ports none
+        bridge_stp off
+        bridge_fd 0
+        post-up echo 1 > /proc/sys/net/ipv4/ip_forward
+        post-up iptables -t nat -A POSTROUTING -s '192.168.0.0/24' -o vmbr0 -j MASQUERADE
+        post-down iptables -t nat -D POSTROUTING -s '192.168.0.0/24' -o vmbr0 -j MASQUERADE
 EOF
 ```
 
@@ -518,6 +533,6 @@ https://pve.proxmox.com/wiki/Qemu-guest-agent
 在母鸡上做dnat，把小鸡的ssh端口暴露出来：
 
 ```
-iptables -t nat -A PREROUTING -p tcp -m tcp --dport 16823 -j DNAT --to-destination 192.168.0.4:22
+iptables -t nat -A PREROUTING -p tcp -m tcp --dport 16823 -j DNAT --to-destination 192.168.0.5:3389
 ```
 
