@@ -492,6 +492,8 @@ crontab -l | {
 
 ```javascript
 systemctl restart crond.service
+或者
+/etc/init.d/cron restart
 ```
 
 复制
