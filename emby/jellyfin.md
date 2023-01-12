@@ -17,13 +17,9 @@ reboot
 #注意：安装完字体，必须重启生效，然后首页删除已有的封面图，重新扫描生成即可
 ```
 {% endtab %}
-
-{% tab title="linux docker" %}
-
-{% endtab %}
 {% endtabs %}
 
-![](<../.gitbook/assets/image (29).png>)
+![](<../.gitbook/assets/image (27).png>)
 
 ### 2、字幕中文显示方框
 
@@ -36,4 +32,3 @@ reboot
 然后在控制台-播放中设置启用备用字体：
 
 ![](<../.gitbook/assets/image (30).png>)
-

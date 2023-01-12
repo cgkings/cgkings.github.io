@@ -47,9 +47,7 @@ http://你的面板域名:8008/oauth2/callback
 
 ![](<../.gitbook/assets/image (50).png>)
 
-![](<../.gitbook/assets/image (57).png>)
-
-
+![](<../.gitbook/assets/image (51).png>)
 
 ## 二、部署服务器端(面板端)
 
@@ -60,8 +58,6 @@ http://你的面板域名:8008/oauth2/callback
 ```
 bash <(curl -Lso- https://raw.githubusercontent.com/naiba/nezha/master/script/install.sh)
 ```
-
-
 {% endtab %}
 
 {% tab title="国内VPS" %}
@@ -69,8 +65,6 @@ bash <(curl -Lso- https://raw.githubusercontent.com/naiba/nezha/master/script/in
 curl -L https://raw.sevencdn.com/naiba/nezha/master/script/install.sh -o nezha.sh && chmod +x nezha.sh
 CN=true ./nezha.sh
 ```
-
-
 {% endtab %}
 {% endtabs %}
 
@@ -110,8 +104,6 @@ bash <(curl -Lso- https://raw.githubusercontent.com/naiba/nezha/master/script/in
 curl -L https://raw.sevencdn.com/naiba/nezha/master/script/install.sh -o nezha.sh && chmod +x nezha.sh
 CN=true ./nezha.sh
 ```
-
-
 {% endtab %}
 {% endtabs %}
 
@@ -127,7 +119,7 @@ CN=true ./nezha.sh
 
 ## 四、主题自定义
 
-![](<../.gitbook/assets/image (61).png>)
+![](<../.gitbook/assets/image (85).png>)
 
 {% tabs %}
 {% tab title="默认主题自定义" %}
@@ -459,8 +451,6 @@ avatar.style.visibility="visible"
 
 方法很多，本部分留空
 
-
-
 ## 六、一键关闭ssh功能
 
 * \--report-delay 系统信息上报的间隔，默认为 1 秒，可以设置为 3 来进一步降低 agent 端系统资源占用（配置区间 1-4）
@@ -474,8 +464,6 @@ avatar.style.visibility="visible"
 ```
 sed -i '/ExecStart/ s/$/ --skip-conn --disable-command-execute/' /etc/systemd/system/nezha-agent.service && systemctl daemon-reload && bash <(curl -Lso- https://raw.githubusercontent.com/naiba/nezha/master/script/install.sh) restart_agent
 ```
-
-
 
 ## 常见问题
 
@@ -492,4 +480,3 @@ echo 199.232.68.133 raw.githubusercontent.com >> /etc/hosts
 #### 启动nezha-agent还是一直显示离线
 
 检查配置有没有写对`cat /etc/systemd/system/nezha-agent.service | grep ExecStart`
-
