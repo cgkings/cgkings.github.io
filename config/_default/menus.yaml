@@ -27,7 +27,7 @@ main:
     pre: user
     weight: 2
   - identifier: flinks
-    name: 站点示例
+    name: VPS
     pageref: /flinks.html
     pre: thumbs-up
     weight: 3
